@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "9a11429d-0615-4621-bfc9-53157f758ad9",
+		"name": "Adi-server App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16096134"
+	},
+	"item": [
+		{
+			"name": "Run",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/run",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"run"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Generated Value",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"num\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/generated-value/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"generated-value",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health Checker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/healthchecker",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"healthchecker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get  Generated Value",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/generated-value/3f3bb53a-751f-4924-aea0-b9d91193d1f2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"generated-value",
+						"3f3bb53a-751f-4924-aea0-b9d91193d1f2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All  Generated Values",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/generated-values",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"generated-values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update  Generated Value",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"num\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/generated-value/3f3bb53a-751f-4924-aea0-b9d91193d1f2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"generated-value",
+						"3f3bb53a-751f-4924-aea0-b9d91193d1f2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete  Generated Value",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/generated-value/3f3bb53a-751f-4924-aea0-b9d91193d1f2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"generated-value",
+						"3f3bb53a-751f-4924-aea0-b9d91193d1f2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All Generated Values",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/remove-generated-values",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"remove-generated-values"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
