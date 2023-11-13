@@ -1,15 +1,15 @@
 version: '3.8'
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/usr/src/app
-    ports:
-      - '8080:8080'
-    depends_on:
-      - adi-mysql
+  # app:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - .:/usr/src/app
+  #   ports:
+  #     - '8080:8080'
+  #   depends_on:
+  #     - adi-mysql
 
   adi-mysql:
     image: mysql:latest
