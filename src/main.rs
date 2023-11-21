@@ -3,7 +3,6 @@ mod handler;
 mod model;
 mod schema;
 
-//use actix_web::dev::{Service, ServiceRequest, ServiceResponse};
 use actix_web::middleware::Logger;
 use actix_web::{web, App, HttpServer};
 use dotenv::dotenv;

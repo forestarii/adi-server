@@ -52,7 +52,6 @@ async fn execute_value_handler(pool: web::Data<AppState>) -> impl Responder {
                             }
                         }
                     }
-                    //println!("val is {}", text);
                 }
             }
         })
@@ -66,11 +65,6 @@ async fn execute_value_handler(pool: web::Data<AppState>) -> impl Responder {
     let cloned_vector = locked_values.clone();
 
     let sorted_vector = find_repeated_values(&cloned_vector);
-
-    // println!(
-    //     "output vector {:?}\nvector of repeted values {:?}",
-    //     cloned_vector, sorted_vector
-    // );
 
     HttpResponse::Ok()
         .json(json!({"status": "success", "output values": cloned_vector, "repeted values": sorted_vector}))
@@ -311,7 +305,7 @@ pub async fn store_user_handler(
 ) -> impl Responder {
     let id = Uuid::new_v4().to_string();
 
-    let _ = sqlx::query("INSERT INTO users_auth (id, username, user_password) VALUES (?, ?, ?)")
+    let _ = sqlx::query("INSERT INTO users (id, username, user_password) VALUES (?, ?, ?)")
         .bind(id.clone())
         .bind(user.username.clone())
         .bind(user.password.clone())
@@ -328,7 +322,7 @@ async fn get_user_handler(
     pool: web::Data<AppState>,
 ) -> impl Responder {
     let id = path.into_inner().to_string();
-    let _query_result = sqlx::query!(r#"SELECT * FROM users_auth WHERE id = ?"#, id)
+    let _query_result = sqlx::query!(r#"SELECT * FROM users WHERE id = ?"#, id)
         .fetch_one(&pool.db)
         .await;
 
